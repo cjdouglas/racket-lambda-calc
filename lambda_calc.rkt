@@ -105,7 +105,7 @@
   (λ (z)
     ((z
       (λ (a)
-          (λ (l) false)))
+        (λ (l) false)))
      true)))
 (define z ((cons 7) ((cons 2) ((cons 9) nil))))
 (define z2 nil)
