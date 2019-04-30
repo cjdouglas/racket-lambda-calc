@@ -8,6 +8,7 @@
   ((b #t) #f))
 
 ;; Church numerals
+(println "testing numerals")
 (define Z
   (λ (s)
     (λ (z) z)))
@@ -34,8 +35,11 @@
       ((m (plus n)) Z))))
 (define five ((plus one) four))
 (define fifteen ((mult five) three))
+(to-num five)
+(to-num fifteen)
 
 ;; Church booleans
+(println "testing booleans")
 (define true
   (λ (t)
     (λ (f) t)))
@@ -53,14 +57,15 @@
 (define not
   (λ (p)
     ((p false) true)))
-;((and true) false)
-;((or false) true)
-;(not false)
+((and true) false)
+((or false) true)
+(not false)
 
 ;; Church pairs
 ;;
 ;; Constructs a pair
 ;; λx.λy.λf.f x y
+(println "testing pairs")
 (define mkpair
   (λ (x)
     (λ (y)
@@ -88,6 +93,7 @@
 ;;
 ;; Represents nil
 ;; λc.λn.n
+(println "testing lists")
 (define nil
   (λ (c)
     (λ (n) n)))
